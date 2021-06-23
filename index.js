@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const app = express();
 const User = require("./model/user");
 const Post = require("./model/post");
+const keys = require("./keys");
 
 //  get, post, put/patch, delete
 
@@ -21,8 +22,7 @@ app.use("*", (req, res, next) => {
   next();
 });
 
-const MONGOURI =
-  "mongodb+srv://EK:A9QKovNVbhUmcN2x@cluster0.vtnq1.mongodb.net/upliftDB?retryWrites=true&w=majority";
+const MONGOURI = keys.MONGOURI;
 // const MONGOURI = "mongodb://localhost:27017/uplift"
 
 mongoose
